@@ -6,9 +6,9 @@ import availLogoCompitions from "@/clientSide";
 
 const AvaliableCompetetions = () => {
   return (
-    <section aria-label="Our partners">
-      <h2 className="text-2xl font-bold text-center dark:text-white">
-        Our Partners
+    <section aria-label="Our partners" className="hidden md:block">
+      <h2 className="text-2xl font-bold text-mainTextInLight text-center dark:text-white">
+        Competetions
       </h2>
       <div className="w-full overflow-hidden py-8">
         <div className="relative flex w-full">

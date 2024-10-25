@@ -15,10 +15,10 @@ import {
 } from "lucide-react";
 
 const navItems = [
-  { name: "الرئيسية", href: "/", icon: House },
-  { name: "المباريات", href: "/matches", icon: Calendar },
-  { name: "الترتيب", href: "/ranking", icon: ReceiptText },
-  { name: "البطولات", href: "/trophies", icon: Trophy },
+  { name: "Home", href: "/", icon: House },
+  { name: "Matches", href: "/matches", icon: Calendar },
+  { name: "Ranking", href: "/ranking", icon: ReceiptText },
+  { name: "Championships", href: "/trophies", icon: Trophy },
 ];
 
 const Header = () => {
@@ -41,14 +41,14 @@ const Header = () => {
   return (
     <nav
       className={`${
-        darkMode ? "bg-gray-800 text-white" : "bg-green-700 text-white"
+        darkMode ? "bg-gray-800 text-white" : "bg-subMainBg text-white"
       } shadow-lg transition-colors duration-200`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0">
-              <span className="text-2xl font-bold">Koora4All</span>
+              <span className="text-2xl font-bold">Korra2All</span>
             </Link>
           </div>
           <div className="hidden md:block">
@@ -61,11 +61,11 @@ const Header = () => {
                     pathname === item.href
                       ? darkMode
                         ? "bg-gray-900 text-white"
-                        : "bg-green-800 text-white"
+                        : "bg-[#E3651D] text-white"
                       : darkMode
                       ? "text-gray-300 hover:bg-gray-700 hover:text-white"
-                      : "text-green-400 hover:bg-green-600"
-                  } px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center mr-4`}
+                      : "text-subTextInLight hover:bg-[#cad4c3]"
+                  } px-3 py-2 rounded-md text-sm font-bold transition-colors duration-200 flex gap-1 items-center mr-4`}
                 >
                   <item.icon className="w-5 h-5 ml-2 " />
                   {item.name}
@@ -79,7 +79,7 @@ const Header = () => {
               className={`p-2 rounded-md ${
                 darkMode
                   ? "text-yellow-300 hover:bg-gray-700"
-                  : "text-yellow-100 hover:bg-green-600"
+                  : "text-yellow-100 hover:bg-[#cad4c3]"
               } focus:outline-none  focus:ring-white`}
             >
               <span className="sr-only">تبديل الوضع الليلي</span>

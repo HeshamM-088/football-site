@@ -8,7 +8,7 @@ const MainLayout = ({ children }) => {
   return (
     <ThemeProvider>
       <Header />
-      <div className="bg-light-green-600 dark:bg-black">{children}</div>
+      <div className="bg-mainBg dark:bg-black">{children}</div>
       <Footer />
     </ThemeProvider>
   );

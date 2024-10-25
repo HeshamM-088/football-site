@@ -1,5 +1,8 @@
 import AvaliableCompetetions from "@/components/homeComponents/AvaliableCompetetions";
+import UpcomingMatches from "@/components/homeComponents/UpcomingMatches";
+import { getUpComingMatchesInCertianDate } from "@/serverSideCalls/UpComingMatches";
 import Image from "next/image";
+import { format } from "date-fns";
 
 // Mock data
 const latestMatches = [
@@ -23,30 +26,6 @@ const latestMatches = [
     awayTeam: "Borussia Dortmund",
     score: "1-1",
     date: "2023-05-19",
-  },
-];
-
-const upcomingMatches = [
-  {
-    id: 4,
-    homeTeam: "PSG",
-    awayTeam: "Marseille",
-    date: "2023-05-25",
-    time: "20:00",
-  },
-  {
-    id: 5,
-    homeTeam: "Juventus",
-    awayTeam: "AC Milan",
-    date: "2023-05-26",
-    time: "19:45",
-  },
-  {
-    id: 6,
-    homeTeam: "Arsenal",
-    awayTeam: "Chelsea",
-    date: "2023-05-27",
-    time: "17:30",
   },
 ];
 
@@ -82,12 +61,32 @@ const latestNews = [
   },
 ];
 
-export default function Home() {
+export default async function Home() {
+  const formattedToday = new Date();
+  const today = format(formattedToday, "yyyy-MM-dd");
+  /////////////////////////////////
+  const formattedYesterday = new Date();
+  formattedYesterday.setDate(formattedYesterday.getDate() - 1);
+  const yesterday = format(formattedYesterday, "yyyy-MM-dd");
+  /////////////////////////////////////////////////
+  const formattedTomorrow = new Date();
+  formattedTomorrow.setDate(formattedTomorrow.getDate() + 1);
+  const tomorrow = format(formattedTomorrow, "yyyy-MM-dd");
+
+  const data = await getUpComingMatchesInCertianDate(today);
+
   return (
-    <div className="space-y-2 py-4">
+    <div className="space-y-2 flex justify-center items-center flex-col py-4">
       <AvaliableCompetetions />
 
-      <section>
+      <UpcomingMatches
+        data={data}
+        today={today}
+        yesterday={yesterday}
+        tomorrow={tomorrow}
+      />
+
+      {/* <section>
         <h2 className="text-2xl font-semibold mb-4">Latest Results</h2>
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {latestMatches.map((match) => (
@@ -102,29 +101,6 @@ export default function Home() {
               </div>
               <div className="text-sm text-gray-500 dark:text-gray-400 mt-2">
                 {match.date}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section>
-        <h2 className="text-2xl font-semibold mb-4">Upcoming Matches</h2>
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {upcomingMatches.map((match) => (
-            <div
-              key={match.id}
-              className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
-            >
-              <div className="flex justify-between items-center">
-                <span>{match.homeTeam}</span>
-                <span className="text-sm font-semibold text-blue-600 dark:text-blue-400">
-                  vs
-                </span>
-                <span>{match.awayTeam}</span>
-              </div>
-              <div className="text-sm text-gray-500 dark:text-gray-400 mt-2">
-                {match.date} at {match.time}
               </div>
             </div>
           ))}
@@ -176,7 +152,7 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }
