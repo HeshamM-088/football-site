@@ -21,9 +21,12 @@ module.exports = withMT({
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      backgroundSize: {
+        "bg-mySize": "100% 100%",
+      },
       colors: {
         mainTextInDark: "#1A1A19",
-        mainTextInLight: "#FFEB3B",
+        mainTextInLight: "rgb(255 229 0)",
         subTextInLight: "rgb(255 255 255)",
         subTextInDark: "#FFEB3B",
         mainBg: "rgb(142 177 102)",

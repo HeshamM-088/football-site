@@ -18,7 +18,7 @@ const navItems = [
   { name: "Home", href: "/", icon: House },
   { name: "Matches", href: "/matches", icon: Calendar },
   { name: "Ranking", href: "/ranking", icon: ReceiptText },
-  { name: "Championships", href: "/trophies", icon: Trophy },
+  { name: "Championships", href: "/champions", icon: Trophy },
 ];
 
 const Header = () => {
@@ -51,7 +51,7 @@ const Header = () => {
               <span className="text-2xl font-bold">Korra2All</span>
             </Link>
           </div>
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <div className="ml-10 flex items-baseline space-x-4">
               {navItems.map((item) => (
                 <Link
@@ -89,7 +89,7 @@ const Header = () => {
                 <Moon className="h-6 w-6" />
               )}
             </button>
-            <div className="mr-2 flex md:hidden">
+            <div className="mr-2 flex lg:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 className={`inline-flex items-center justify-center p-2 rounded-md ${

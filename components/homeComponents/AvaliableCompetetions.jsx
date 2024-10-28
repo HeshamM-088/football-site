@@ -30,7 +30,7 @@ const AvaliableCompetetions = () => {
                     alt={alt}
                     width={200}
                     height={200}
-                    loading="lazy"
+                    priority={true}
                     className="drop-shadow-3xl cursor-pointer rounded-lg hover:scale-[1.2] transition-all duration-[0.6s]"
                   />
                 </Tooltip>

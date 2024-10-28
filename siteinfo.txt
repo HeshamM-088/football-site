@@ -2,3 +2,8 @@ site password token : e191e07f2acf423296dd397ab4d29910
 
 
 host-site : https://korra2all.vercel.app/
+
+
+webSite : https://www.football-data.org/documentation/quickstart
+
+https://www.api-football.com/
