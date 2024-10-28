@@ -35,5 +35,5 @@ module.exports = withMT({
     },
   },
   plugins: [],
-  darkMode: "class",
+  darkMode: "selector",
 });
