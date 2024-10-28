@@ -76,7 +76,7 @@ export default async function Home() {
   const data = await getUpComingMatchesInCertianDate(today);
 
   return (
-    <div className="space-y-2 flex justify-center items-center flex-col py-4">
+    <div className="space-y-2 flex w-full justify-center items-center flex-col py-4">
       <AvaliableCompetetions />
 
       <UpcomingMatches
