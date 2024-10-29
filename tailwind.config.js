@@ -17,6 +17,7 @@ module.exports = withMT({
         "3xl": "6px 6px 6px #388E3C",
       },
       backgroundImage: {
+        "hero-back": 'url("/public/up.svg")',
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",

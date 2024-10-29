@@ -1,8 +1,5 @@
 import AvaliableCompetetions from "@/components/homeComponents/AvaliableCompetetions";
 import UpcomingMatches from "@/components/homeComponents/UpcomingMatches";
-import { getUpComingMatchesInCertianDate } from "@/serverSideCalls/UpComingMatches";
-import Image from "next/image";
-import { format } from "date-fns";
 
 // Mock data
 const latestMatches = [
@@ -62,29 +59,11 @@ const latestNews = [
 ];
 
 export default async function Home() {
-  const formattedToday = new Date();
-  const today = format(formattedToday, "yyyy-MM-dd");
-  /////////////////////////////////
-  const formattedYesterday = new Date();
-  formattedYesterday.setDate(formattedYesterday.getDate() - 1);
-  const yesterday = format(formattedYesterday, "yyyy-MM-dd");
-  /////////////////////////////////////////////////
-  const formattedTomorrow = new Date();
-  formattedTomorrow.setDate(formattedTomorrow.getDate() + 1);
-  const tomorrow = format(formattedTomorrow, "yyyy-MM-dd");
-
-  const data = await getUpComingMatchesInCertianDate(today);
-
   return (
     <div className="space-y-2 flex w-full justify-center items-center flex-col py-4">
       <AvaliableCompetetions />
 
-      <UpcomingMatches
-        data={data}
-        today={today}
-        yesterday={yesterday}
-        tomorrow={tomorrow}
-      />
+      <UpcomingMatches />
 
       {/* <section>
         <h2 className="text-2xl font-semibold mb-4">Latest Results</h2>

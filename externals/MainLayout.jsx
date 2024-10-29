@@ -13,7 +13,7 @@ const MainLayout = ({ children }) => {
         <Header />
         <div
           suppressHydrationWarning={true}
-          className="dark:bg-[url('https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcGYtczQ4LXRlZC0wNzA2LWV5ZS0wMS5qcGc.jpg')] bg-[url('https://img.freepik.com/premium-photo/background-is-made-up-artificial-grass-texture-depicted-as-flat-lay_1257429-55008.jpg')] bg-fixed	bg-bg-mySize"
+          className="bg-[url('https://www.krea.ai/api/img?f=webp&i=https%3A%2F%2Ftest1-emgndhaqd0c9h2db.a01.azurefd.net%2Fimages%2Ff04be8b1-78d6-461a-9168-9da527ce6970.png')] bg-fixed	bg-bg-mySize"
         >
           {children}
         </div>
