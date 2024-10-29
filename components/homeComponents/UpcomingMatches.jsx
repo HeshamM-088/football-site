@@ -34,8 +34,6 @@ const UpcomingMatches = () => {
     (state) => state.homeMatches
   );
 
-  console.log(TTY_Data);
-
   const dispatch = useDispatch();
 
   useEffect(() => {
