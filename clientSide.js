@@ -87,10 +87,4 @@ const availLogoCompitions = [
 
 export default availLogoCompitions;
 
-export {
-  Tooltip,
-  useState,
-  VscRemote,
-  MdOutlineDownloadDone,
-  getUpComingMatchesInCertianDate,
-};
+export { Tooltip, useState, VscRemote, MdOutlineDownloadDone };
