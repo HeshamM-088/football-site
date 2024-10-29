@@ -6,17 +6,20 @@ import availLogoCompitions from "@/clientSide";
 
 const AvaliableCompetetions = () => {
   return (
-    <section aria-label="Our partners" className="hidden md:block">
-      <h2 className="text-2xl font-bold text-mainTextInLight text-center dark:text-white">
+    <section
+      aria-label="Our partners"
+      className="flex justify-center items-center flex-col"
+    >
+      <h2 className="text-2xl font-bold text-white  dark:text-mainTextInLight">
         Competetions
       </h2>
       <div className="w-full overflow-hidden py-8">
         <div className="relative flex w-full">
-          <div className="animate-slide px-12 flex w-full items-center justify-evenly">
+          <div className="animate-slide flex-wrap gap-y-8 px-12 flex w-full items-center justify-evenly">
             {availLogoCompitions.map(({ id, src, alt, code }) => (
               <div
                 key={`${id}`}
-                className="mx-4 w-full flex flex-wrap  items-center justify-center rounded-lg"
+                className="mx-4 flex flex-wrap  items-center justify-center rounded-lg"
               >
                 <Tooltip
                   content={alt}
@@ -28,10 +31,10 @@ const AvaliableCompetetions = () => {
                   <Image
                     src={src}
                     alt={alt}
-                    width={200}
-                    height={200}
+                    width={40}
+                    height={40}
                     priority={true}
-                    className="drop-shadow-3xl cursor-pointer rounded-lg hover:scale-[1.2] transition-all duration-[0.6s]"
+                    className="max-w-[60px] h-auto drop-shadow-3xl cursor-pointer rounded-lg hover:scale-[1.2] transition-all duration-[0.6s]"
                   />
                 </Tooltip>
               </div>
