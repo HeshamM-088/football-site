@@ -64,7 +64,15 @@ export default async function Home() {
     <div className="space-y-2 flex w-full justify-center items-center flex-col py-4">
       <AvaliableCompetetions />
 
-      <UpcomingMatches />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-center w-full container">
+        <div className="w-full">
+          <UpcomingMatches />
+        </div>
+
+        <div className="w-full ">
+          <UpcomingMatches />
+        </div>
+      </div>
 
       {/* <section>
         <h2 className="text-2xl font-semibold mb-4">Latest Results</h2>
