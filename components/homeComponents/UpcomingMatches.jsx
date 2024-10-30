@@ -41,12 +41,12 @@ const UpcomingMatches = () => {
   }, [activeLeague]);
 
   return (
-    <section className="flex px-[4em] w-full flex-col justify-center items-center">
+    <section className="flex px-[2em] md:px-0 lg:px-[4em] w-full flex-col justify-center items-center">
       <h2 className="text-2xl text-white dark:text-mainTextInLight font-semibold mb-4">
         Matches
       </h2>
-      <div className="w-full ">
-        <div className="mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+      <div className=" w-full">
+        <div className="mx-auto  bg-white rounded-lg shadow-lg overflow-hidden">
           <div className="flex flex-col md:flex-row overflow-x-auto justify-center bg-gray-100">
             {leagues.map((league, index) => (
               <button
@@ -62,18 +62,18 @@ const UpcomingMatches = () => {
               </button>
             ))}
           </div>
-          <div className="divide-y p-4 rounded-lg items-center flex-col md:flex-row max-h-[10em] bg-subTextInLight dark:bg-subTextInDark overflow-x-auto flex gap-4 w-full justify-evenly  divide-gray-200">
+          <div className="divide-y  p-4 rounded-lg items-center flex-col  max-h-[10em] bg-subTextInLight dark:bg-subTextInDark overflow-x-auto flex gap-4 w-full justify-evenly  divide-gray-200">
             {TTY_Loading ? (
               <LoadingMatches />
             ) : (
               TTY_Data?.map(
                 ({ status, homeTeam, awayTeam, score: { fullTime } }, index) =>
-                  index < 4 && (
+                  index < 5 && (
                     <div
                       key={index}
-                      className="flex flex-col md:flex-row  bg-mainBg dark:bg-mainTextInDark md:min-w-max text-white items-center justify-between p-4"
+                      className="flex w-full flex-col md:flex-row  bg-mainBg dark:bg-mainTextInDark md:min-w-max text-white items-center justify-between p-4"
                     >
-                      <div className="flex flex-col md:flex-row items-center space-x-0 md:space-x-2 ">
+                      <div className="w-full flex justify-evenly flex-row items-center space-x-0 md:space-x-2 ">
                         <div className="text-sm flex items-center gap-2 font-bold">
                           <Tooltip
                             content={homeTeam.shortName}
@@ -126,10 +126,10 @@ const UpcomingMatches = () => {
               )
             )}
             <Link
-              className=" text-xs font-bold bg-mainBg dark:bg-mainTextInDark p-1 rounded-lg  cursor-pointer   text-white border-0"
+              className=" text-sm font-bold bg-mainBg dark:bg-mainTextInDark p-2 rounded-lg  cursor-pointer   text-white border-0"
               href="/matches"
             >
-              . . .
+              More ...
             </Link>
           </div>
         </div>
