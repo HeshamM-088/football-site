@@ -31,10 +31,10 @@ const AvaliableCompetetions = () => {
                   <Image
                     src={src}
                     alt={alt}
-                    width={40}
-                    height={40}
+                    width={0}
+                    height={0}
                     priority={true}
-                    className="max-w-[60px] h-auto drop-shadow-3xl cursor-pointer rounded-lg hover:scale-[1.2] transition-all duration-[0.6s]"
+                    className="min-w-[40px] drop-shadow-3xl cursor-pointer rounded-lg hover:scale-[1.2] transition-all duration-[0.6s]"
                   />
                 </Tooltip>
               </div>

@@ -1,5 +1,6 @@
 import AvaliableCompetetions from "@/components/homeComponents/AvaliableCompetetions";
 import UpcomingMatches from "@/components/homeComponents/UpcomingMatches";
+import axios from "axios";
 
 // Mock data
 const latestMatches = [

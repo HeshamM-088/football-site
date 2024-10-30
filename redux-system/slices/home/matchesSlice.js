@@ -11,15 +11,11 @@ export const getMatchesTTY = createAsyncThunk(
     const { rejectWithValue } = ThunkAPI;
 
     try {
-      const res = await axios({
-        method: "GET",
-        url: `${process.env.NEXT_PUBLIC_APICORS}/api.football-data.org/v4/matches?date=${certianDate}`,
-        headers: {
-          "X-Auth-Token": "e191e07f2acf423296dd397ab4d29910",
-        },
+      const response = await axios.post("/api/football", {
+        url: `https://api.football-data.org/v4/matches?date=${certianDate}`,
       });
 
-      return res.data;
+      return response.data;
     } catch (er) {
       return rejectWithValue(er);
     }
