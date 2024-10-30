@@ -1,45 +1,49 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import axios from 'axios'
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
+
+/*
+TTY stands for today , tomorrow and yesterday
+*/
 
 export const getMatchesTTY = createAsyncThunk(
-  '/getMatchesTTY',
+  "/getMatchesTTY",
   async (certianDate, ThunkAPI) => {
-    const { rejectWithValue } = ThunkAPI
+    const { rejectWithValue } = ThunkAPI;
 
     try {
-      const response = await axios.post('/api/football', {
+      const response = await axios.post("/api/football", {
         url: `https://api.football-data.org/v4/matches?date=${certianDate}`,
-      })
+      });
 
-      return response.data
-    } catch (error) {
-      return rejectWithValue(error)
+      return response.data;
+    } catch (er) {
+      return rejectWithValue(er);
     }
   }
-)
+);
 
 const initialState = {
   TTY_Loading: true,
   TTY_Data: null,
   TTY_Error: null,
-}
+};
 
 const matchSlice = createSlice({
-  name: 'home_matches',
+  name: "home_matches",
   initialState,
-  extraReducers: builder => {
-    builder.addCase(getMatchesTTY.pending, state => {
-      state.TTY_Loading = true
-    })
+  extraReducers: (builder) => {
+    builder.addCase(getMatchesTTY.pending, (state) => {
+      state.TTY_Loading = true;
+    });
     builder.addCase(getMatchesTTY.fulfilled, (state, action) => {
-      state.TTY_Loading = false
-      state.TTY_Data = action.payload.matches
-    })
+      state.TTY_Loading = false;
+      state.TTY_Data = action.payload.matches;
+    });
     builder.addCase(getMatchesTTY.rejected, (state, action) => {
-      state.TTY_Loading = false
-      state.TTY_Error = action.payload.message
-    })
+      state.TTY_Loading = false;
+      state.TTY_Error = action.payload.message;
+    });
   },
-})
+});
 
-export const homeMatches = matchSlice.reducer
+export const homeMatches = matchSlice.reducer;
