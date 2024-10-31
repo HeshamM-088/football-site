@@ -7,4 +7,4 @@ const ranking = () => {
   )
 }
 
-export default ranking
+export default ranking;
