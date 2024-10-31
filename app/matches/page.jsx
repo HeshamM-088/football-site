@@ -1,7 +1,7 @@
 import React from "react";
 
 const matches = () => {
-  return <div>matches</div>;
+  return <div>Matches</div>;
 };
 
 export default matches;
