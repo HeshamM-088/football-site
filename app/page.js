@@ -1,4 +1,5 @@
 import AvaliableCompetetions from "@/components/homeComponents/AvaliableCompetetions";
+import MatchSummary from "@/components/homeComponents/MatchSummary";
 import StandingLeagues from "@/components/homeComponents/StandingLeagues";
 import UpcomingMatches from "@/components/homeComponents/UpcomingMatches";
 import axios from "axios";
@@ -62,8 +63,10 @@ const latestNews = [
 
 export default async function Home() {
   return (
-    <div className="space-y-2 flex w-full justify-center items-center flex-col py-4">
-      <AvaliableCompetetions />
+    <div className="space-y-4 md:space-y-12 flex w-full justify-center items-center flex-col py-4">
+      <div className="w-full">
+        <AvaliableCompetetions />
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-10 gap-8 justify-center w-full container">
         <div className="w-full md:col-span-4">
@@ -73,6 +76,10 @@ export default async function Home() {
         <div className="w-full md:col-span-6">
           <StandingLeagues />
         </div>
+      </div>
+
+      <div className="w-full container ">
+        <MatchSummary />
       </div>
 
       {/* <section>

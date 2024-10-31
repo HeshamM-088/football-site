@@ -1,5 +1,18 @@
 "use client";
-import { Tooltip } from "@material-tailwind/react";
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Typography,
+  Avatar,
+  Tooltip,
+  Button,
+  Dialog,
+  DialogHeader,
+  DialogBody,
+  DialogFooter,
+} from "@material-tailwind/react";
 import { useState } from "react";
 import { VscRemote } from "react-icons/vsc";
 import { MdOutlineDownloadDone } from "react-icons/md";
@@ -108,4 +121,20 @@ export const mainThreeLogoCompitions = [
 
 export default availLogoCompitions;
 
-export { Tooltip, useState, VscRemote, MdOutlineDownloadDone };
+export {
+  Tooltip,
+  useState,
+  VscRemote,
+  MdOutlineDownloadDone,
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Typography,
+  Avatar,
+  Button,
+  Dialog,
+  DialogHeader,
+  DialogBody,
+  DialogFooter,
+};
