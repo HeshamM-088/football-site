@@ -1,5 +1,6 @@
 import AvaliableCompetetions from "@/components/homeComponents/AvaliableCompetetions";
 import MatchSummary from "@/components/homeComponents/MatchSummary";
+import StandingLeagues from "@/components/homeComponents/StandingLeagues";
 import UpcomingMatches from "@/components/homeComponents/UpcomingMatches";
 import axios from "axios";
 
@@ -67,13 +68,13 @@ export default async function Home() {
         <AvaliableCompetetions />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-center w-full container">
-        <div className="w-full">
+      <div className="grid grid-cols-1 md:grid-cols-10 gap-8 justify-center w-full container">
+        <div className="w-full md:col-span-4">
           <UpcomingMatches />
         </div>
 
-        <div className="w-full ">
-          <UpcomingMatches />
+        <div className="w-full md:col-span-6">
+          <StandingLeagues />
         </div>
       </div>
 
