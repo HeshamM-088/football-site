@@ -1,7 +1,10 @@
-import React from "react";
 
 const ranking = () => {
-  return <div>ranking</div>;
-};
+  return (
+    <div>
+        ranking
+    </div>
+  )
+}
 
-export default ranking;
+export default ranking

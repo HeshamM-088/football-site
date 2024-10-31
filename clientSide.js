@@ -85,6 +85,27 @@ const availLogoCompitions = [
   },
 ];
 
+export const mainThreeLogoCompitions = [
+  {
+    id: 12,
+    src: "https://crests.football-data.org/770.svg",
+    alt: "Premier League",
+    code: "PL",
+  },
+  {
+    id: 6,
+    src: "https://upload.wikimedia.org/wikipedia/en/9/9a/Flag_of_Spain.svg",
+    alt: "Primera Division",
+    code: "PD",
+  },
+  {
+    id: 7,
+    src: "https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg",
+    alt: "Ligue 1",
+    code: "FL1",
+  },
+]
+
 export default availLogoCompitions;
 
 export { Tooltip, useState, VscRemote, MdOutlineDownloadDone };
