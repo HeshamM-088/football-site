@@ -11,4 +11,9 @@ https://www.api-football.com/
 
 key : X-Auth-Token
 
-value : e191e07f2acf423296dd397ab4d29910
+API-Key : e191e07f2acf423296dd397ab4d29910
+
+
+https://allsportsapi.com/admin
+APIkey : dbc9f99b8c9aabe404d198874f5eb1d3d75e5c070f587041c26d57a8dd703977
+
